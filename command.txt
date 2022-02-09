@@ -1,0 +1,3 @@
+Command for conda environment
+> conda create -n "env_name"
+> conda 
