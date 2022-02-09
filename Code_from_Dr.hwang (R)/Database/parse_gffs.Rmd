@@ -1,0 +1,178 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("rtracklayer")
+```
+
+```{r}
+library(tidyverse)
+library(plyr)
+library(magrittr)
+```
+
+```{r}
+getwd()
+```
+
+#Pair wp number with locus and old locus IDs, along with start and stop positions
+```{r}
+rm(list = ls())
+
+gff.parse <- function(x) {
+  ids <- list()
+  x %<>% filter(type == "gene" | type == "pseudogene" | type == "CDS" | type == "tRNA" | type == "rRNA" | type == "RNase_P_RNA" | type == "SRP_RNA"
+                | type == "direct_repeat" |  type == "gap"| type == "snoRNA"| type == "snRNA"
+                | type == "inverted_repeat" | type == "long_terminal_repeat" | type == "mobile_genetic_element" | type == "pseudogenic_tRNA" 
+                | type == "region" | type == "repeat_region" | type == "sequence_feature" | type == "tandem_repeat")
+  x %<>% arrange(desc(start))
+  if ("old_locus_tag" %in% colnames(x)) {
+    for (i in 1:(nrow(x)-1)) {
+      if (all(x[i,2:4] == x[i+1,2:4])) {
+      vec <- data.frame("chr"=x[["seqnames"]][i],
+                        "acc"= x[["protein_id"]][(i+1)], 
+                        "locus_tag" = x[["locus_tag"]][i], 
+                        "old_locus_tag" = x[["old_locus_tag"]][i], 
+                        "length_nt"= x[["width"]][i], 
+                        "start"= x[["start"]][i], 
+                        "end"= x[["end"]][i],
+                        "strand" = x[["strand"]][i],
+                        "type"= x[["gene_biotype"]][i],
+                        "annotation"= x[["product"]][(i+1)],
+                        stringsAsFactors = F)
+      ids[[i]] <- vec
+      }}} 
+  else if ("gene" %in% colnames(x)) {
+    for (i in 1:(nrow(x)-1)) {
+      if (all(x[i,1:2] == x[i+1,1:2])) {
+      vec <- data.frame("chr"=x[["seqnames"]][i],
+                        "acc"= x[["protein_id"]][(i+1)], 
+                        "locus_tag" = x[["locus_tag"]][i], 
+                        "gene_name" = x[["gene"]][i], 
+                        "length_nt"= x[["width"]][i], 
+                        "start"= x[["start"]][i], 
+                        "end"= x[["end"]][i],
+                        "strand" = x[["strand"]][i],
+                        "type"= x[["gene_biotype"]][i],
+                        "annotation"= x[["product"]][(i+1)],
+                        stringsAsFactors = F)
+      ids[[i]] <- vec
+      }}}
+  
+  df <- bind_rows(ids)
+  if (length(na.omit(unique(x[["protein_id"]]))) == length(na.omit(unique(df[["acc"]])))) {
+    print("all protein ids accounted for")
+  }
+  return(df)
+}
+
+getNOG <- function(x, colname = "eggNOGs", sep = " ", factors = FALSE) {
+  lis <- list()
+  for (i in 1:length(x[[colname]])) {
+    vec <- c(capture.output(cat(unlist(str_extract_all(x[[colname]][i], "[a-zA-Z0-9]*@NOG")), sep = sep)))
+    lis[[i]] <- vec
+    column.names <- "NOGs"
+    } 
+  df <- as.data.frame(do.call(rbind, lis), stringsAsFactors = FALSE)
+  colnames(df) <- column.names
+  df <- cbind("query" = x[["query"]], df, "COG_category" = x[["COG Cat."]], "HMM_description" = x[["eggNOG HMM Desc."]])
+  return(df)
+}
+
+gethalNOG <- function(x, colname = "eggNOGs", sep = " ", factors = FALSE) {
+  lis <- list()
+  for (i in 1:length(x[[colname]])) {
+    vec <- c(capture.output(cat(unlist(str_extract_all(x[[colname]][i], "[a-zA-Z0-9]*@halNOG")), sep = sep)))
+    if (length(vec) == 0) { lis[[i]] <- NA } else { lis[[i]] <- vec }
+    column.names <- "halNOGs"
+  } 
+  df <- as.data.frame(do.call(rbind, lis), stringsAsFactors = FALSE)
+  colnames(df) <- column.names
+  df <- cbind("query" = x[["query"]], df, "COG_category" = x[["COG Cat."]], "HMM_description" = x[["eggNOG HMM Desc."]])
+  return(df)
+}
+```
+
+#Path to find the .gff files
+```{r}
+getwd()
+(filenames <- paste("gff_parse/", list.files(path = "gff_parse/", ".gff$"), sep = ""))
+```
+
+#Execute function for all gff files in working directory and write results out to new file
+```{r}
+for (filename in filenames) {
+
+  # read data:
+  gtf <- rtracklayer::import.gff(filename)
+  gtf_df <- as.data.frame(gtf)
+  gtf_df %>% mutate_if(is.factor, as.character)-> gtf_df 
+
+  # use fxn to make key
+  key <- gff.parse(gtf_df)
+  
+  #write out to new .csv
+  write_csv(key, paste(filename, "_key.csv", sep = ""))
+}
+```
+
+
+
+#Match gene ID
+```{r}
+match.data <- read.csv("res_Hbac_to_Hvol.csv")
+match.data.1 <- data.frame(match.data %>% c("query_gene", "query_protein", "ref_gene", "ref_protein"))
+
+```
+
+
+
+
+#============================== GetNOGs!====================================
+```{r, message=FALSE}
+(filenames <- paste("20181113_files/", list.files(path = "20181113_files/", "*nogs.csv$"), sep = ""))
+
+for (filename in filenames) {
+
+  # read data:
+  egg <- read_csv(filename)
+
+  # use fxn to get NOGs
+  NOGs <- getNOG(egg)
+  
+  #check:
+  print(paste("There were", length(egg$query), "proteins initially.", length(na.omit(NOGs$NOGs)), "of those had a NOG classification"))
+  
+  #write out to new .csv
+  newname <- gsub("_nogs.csv$",  replacement = "", filename)
+  write.table(NOGs, paste(newname, "_GETNOG.csv", sep = ""),
+    append = TRUE,
+    sep = ",",
+    row.names = FALSE,
+    col.names = T)
+}
+
+for (filename in filenames) {
+
+  # read data:
+  egg <- read_csv(filename)
+
+  # use fxn to get NOGs
+  halNOGs <- gethalNOG(egg)
+  
+  #check:
+  print(paste("There were", length(egg$query), "proteins initially.", length(na.omit(halNOGs$halNOGs)), "of those had a halNOG classification"))
+  
+  #write out to new .csv
+  newname <- gsub("_nogs.csv$",  replacement = "", filename)
+  write.table(halNOGs, paste(newname, "_GEThalNOG.csv", sep = ""),
+    append = TRUE,
+    sep = ",",
+    row.names = FALSE,
+    col.names = T)
+}
+```
+

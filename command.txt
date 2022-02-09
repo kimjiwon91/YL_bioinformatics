@@ -1,3 +1,24 @@
 Command for conda environment
-> conda create -n "env_name"
-> conda 
+    List all environment
+        > conda env list
+    Create a new environment
+        > conda create -n "env_name"
+    Activate an environment
+        > conda activate "env_name"
+    Deactivate an active environment
+        > conda deactivate "env_name"
+    Remove an environment
+        > conda remove -n "env_name" --all
+
+Visual Studio code - 
+1. git installation
+2. 
+
+* commit
+
+Terminal for local blastp
+    
+makeblastdb -in YlCLIB122.fasta -dbtype prot -out Yl
+blastp -db YlCLIB122 -query EcAldH.fasta  -outfmt '10 stitle sscinames sskingdoms qcovs evalue pident slen sseqid' -max_target_seqs 1000 -evalue 0.05 -out Yl2BVMO_CLIB122_output.csv -num_threads 2MO_CLIB122_output.csv -num_threads 20
+
+https://github.com/sungminhwang-duke/RNAseq_hand_on_work
