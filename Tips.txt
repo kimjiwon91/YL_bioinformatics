@@ -1,0 +1,17 @@
+Informations for NGS, RNAseq analysis
+FASTA = 이름 + 서열
+FASTQ = 이름 + 서열 + 설명 + 품질
+SAM = header/alignment 부분으로 존재
+header 설명
+    QNAME: read 이름
+    FLAG: 2진수로 된 read alignment 에 대한 설명
+    RNAME: refernce sequence 의 이름
+    POS: reference sequence 에서 align 된 위치
+    MAPQ: mapping quality. 즉 얼마나 정확히 align 되었는지.
+    CIGAR string: alignment 정보를 표현한 문자열. Match, Gap 등의 설명을 각 염기마다 표현합니다.
+    RNEXT: 다음 read 의 reference sequence 이름. 주로 paired end read 에 대한 분석을 위해 사용됩니다.
+    PNEXT: 다음 read 의 align 된 위치. 주로 paired end read 에 대한 분석을 위해 사용됩니다.
+    TLEN: Template length. paired-end read 둘의 left-end 부터 right-end 까지의 길이입니다.
+    SEQ: segment sequence. 염기 서열을 나타냅니다.
+    QUAL: Phread quality score 입니다.
+    BAM = binary alignment map, 사람이 읽을 수 없음

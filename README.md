@@ -1,2 +1,2 @@
 # YL_bioinformatics
-1
+Practices of running bioinformatic tools for researches
