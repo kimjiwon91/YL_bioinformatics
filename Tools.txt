@@ -9,3 +9,7 @@ Modeling
 SWISS-MODEL (https://swissmodel.expasy.org/)
 Making models for protein based by AA sequence homology
 1. input target sequence - 2. build model
+
+
+TMHMM server v.2.0
+for prediction of transmembrane domain
