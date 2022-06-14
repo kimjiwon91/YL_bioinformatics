@@ -1,0 +1,76 @@
+,1,2,3,4,5,6,7,8,9,10,reaction_ID,xml_equation,bigg_name
+ACONT,10.353391,8.331608,6.440361,4.735783,3.031205,1.326626,0.306483,0.231933,0.157383,0.082833,ACONT, cit_c <=> icit_c,Aconitate hydratase
+G5SADr,0.137995,0.125999,0.567303,3.01702,5.466738,7.916455,9.666394,10.449541,11.232688,12.015835,G5SADr, glu5sa_c <=> 1pyr5c_c + h2o_c + h_c,
+G5SD2,0.137995,0.125999,0.567303,3.01702,5.466738,7.916455,9.666394,10.449541,11.232688,12.015835,G5SD2, glu5p_c + h_c + nadh_c --> glu5sa_c + nad_c + pi_c,Glutamate 5 semialdehyde dehydrogenase
+GLU5K,0.137995,0.125999,0.567303,3.01702,5.466738,7.916455,9.666394,10.449541,11.232688,12.015835,GLU5K, atp_c + glu_L_c --> adp_c + glu5p_c,Glutamate 5-kinase
+P5CR,0.137995,0.125999,0.567303,3.01702,5.466738,7.916455,9.666394,10.449541,11.232688,12.015835,P5CR, 1pyr5c_c + 2.0 h_c + nadph_c --> nadp_c + pro_L_c,Pyrroline-5-carboxylate reductase
+ICDHym,5.318971,6.117157,6.440361,4.735783,3.031205,1.326626,0.306483,0.231933,0.157383,0.082833,ICDHym, icit_m + nadp_m --> akg_m + co2_m + nadph_m,Isocitrate dehydrogenase  NADP 
+ASPTA,-1.56546,-1.429378,-1.792659,-1.582017,-1.371375,-1.160734,-0.942296,-0.713089,-0.483882,-0.254674,ASPTA, akg_c + asp_L_c <=> glu_L_c + oaa_c,Aspartate transaminase
+ASPTAm,0.0,0.0,0.502426,0.44339,0.384354,0.325317,0.264096,0.199856,0.135617,0.071377,ASPTAm, akg_m + asp_L_m <=> glu_L_m + oaa_m,Aspartate transaminase
+ASPt2m,0.0,0.0,0.502426,0.44339,0.384354,0.325317,0.264096,0.199856,0.135617,0.071377,ASPt2m, asp_L_c + h_c --> asp_L_m + h_m,Aspartate mitochondrial transport via proton symport
+CITtcm,-5.318971,-6.117157,-6.440361,-4.735783,-3.031205,-1.326626,-0.306483,-0.231933,-0.157383,-0.082833,CITtcm, cit_c + icit_m <=> cit_m + icit_c,Citrate transport  mitochondrial
+DHFRi,0.0,0.0,0.004818,0.004251,0.003685,0.003119,0.002532,0.001916,0.0013,0.000684,DHFRi, dhf_c + h_c + nadph_c --> nadp_c + thf_c,
+FTHFL,0.0,0.0,0.129459,0.114247,0.099035,0.083824,0.068049,0.051496,0.034944,0.018392,FTHFL, atp_c + for_c + thf_c --> 10fthf_c + adp_c + pi_c,
+GLNS,2.934679,2.679573,2.418727,2.13452,1.850314,1.566107,4.10766,10.55319,16.99872,23.444251,GLNS, atp_c + glu_L_c + nh4_c --> adp_c + gln_L_c + h_c + pi_c,Glutamine synthetase
+G3PD1ir,8.906147,8.447092,7.971183,7.426688,6.882193,6.337699,5.762324,5.144285,4.526246,3.908207,G3PD1ir, dhap_c + h_c + nadh_c --> glyc3p_c + nad_c,Glycerol 3 phosphate dehydrogenase  NAD 
+GCC2am,0.356716,0.325707,0.229271,0.202331,0.175391,0.148451,0.120514,0.0912,0.061886,0.032571,GCC2am, gly_m + h_m + lpam_m <=> alpam_m + co2_m,Glycine cleavage complex  lipoamide   mitochondrial
+DHAPtm,8.502073,8.078144,7.63815,7.132788,6.627425,6.122063,5.587268,5.01181,4.436353,3.860895,DHAPtm, dhap_m --> dhap_c,Dihydroxyacetone phosphate transport  mitochondrial
+GCC2bim,0.356716,0.325707,0.229271,0.202331,0.175391,0.148451,0.120514,0.0912,0.061886,0.032571,GCC2bim, alpam_m + thf_m --> dhlam_m + mlthf_m + nh4_m,Glycine cleavage system  lipoamide  irreversible  mitochondrial
+ENO,28.031493,28.25465,28.580568,28.980131,29.379694,29.779258,30.812367,32.720763,34.629159,36.537556,ENO, 2pg_c <=> h2o_c + pep_c,Enolase
+FBA,13.488899,13.237655,13.013767,12.892418,12.77107,12.649721,13.14264,14.484213,15.825785,17.167358,FBA, fdp_c <=> dhap_c + g3p_c,Fructose-bisphosphate aldolase
+GAPD,29.66958,29.750341,29.86593,30.11446,30.36299,30.61152,31.488007,33.232058,34.976109,36.72016,GAPD, g3p_c + nad_c + pi_c <=> 13dpg_c + h_c + nadh_c,Glyceraldehyde-3-phosphate dehydrogenase
+PFK,13.488899,13.237655,13.013767,12.892418,12.77107,12.649721,13.14264,14.484213,15.825785,17.167358,PFK, atp_c + f6p_c --> adp_c + fdp_c + h_c,Phosphofructokinase
+FACOAL140,-0.75873,-0.692775,-0.625336,-0.551857,-0.478379,-0.4049,-0.328703,-0.248748,-0.168793,-0.088838,FACOAL140, atp_c + coa_c + ttdca_c <=> amp_c + ppi_c + tdcoa_c,Fatty acid  CoA ligase  tetradecanoate 
+FACOAL160,0.75873,0.692775,0.625336,0.551857,0.478379,0.4049,0.328703,0.248748,0.168793,0.088838,FACOAL160, atp_c + coa_c + hdca_c --> amp_c + pmtcoa_c + ppi_c,Fatty acid  CoA ligase  hexadecanoate 
+PGI,8.572365,7.114024,5.721893,4.572861,3.423829,2.274796,2.939518,6.110063,9.280608,12.451152,PGI, g6p_c <=> f6p_c,Glucose-6-phosphate isomerase
+PGK,-29.66958,-29.750341,-29.86593,-30.11446,-30.36299,-30.61152,-31.488007,-33.232058,-34.976109,-36.72016,PGK, 3pg_c + atp_c <=> 13dpg_c + adp_c,Phosphoglycerate kinase
+PGM,-28.031493,-28.25465,-28.580568,-28.980131,-29.379694,-29.779258,-30.812367,-32.720763,-34.629159,-36.537556,PGM, 2pg_c <=> 3pg_c,Phosphoglycerate mutase
+FAS160,0.75873,0.692775,0.625336,0.551857,0.478379,0.4049,0.328703,0.248748,0.168793,0.088838,FAS160, 3.0 h_c + malcoa_c + 2.0 nadph_c + ttdca_c --> co2_c + coa_c + h2o_c + hdca_c + 2.0 nadp_c,Fatty acid synthase  n C160 
+PYK,27.872575,28.109547,28.44959,28.864543,29.279497,29.69445,30.743519,32.668662,34.593805,36.518948,PYK, adp_c + h_c + pep_c --> atp_c + pyr_c,Pyruvate kinase
+TPI,13.084826,12.868707,12.680734,12.598518,12.516301,12.434085,12.967585,14.351738,15.735892,17.120046,TPI, dhap_c <=> g3p_c,Triose-phosphate isomerase
+FDH,0.157074,0.14342,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,FDH, for_c + nad_c --> co2_c + nadh_c,Formate dehydrogenase
+G5SADrm,0.0,0.0,-0.45357,-2.916651,-5.379732,-7.842814,-9.606611,-10.4043,-11.201989,-11.999678,G5SADrm, glu5sa_m <=> 1pyr5c_m + h2o_m + h_m,L glutamate 5 semialdehyde dehydratase  reversible  mitochondrial
+G6PDH2,9.954115,11.540547,13.06365,14.355384,15.647118,16.938852,16.422113,13.406847,10.391582,7.376316,G6PDH2, g6p_c + nadp_c --> 6pgl_c + h_c + nadph_c,
+MDH,44.655419,38.983956,34.086101,31.714512,29.342924,26.971336,25.910447,26.660378,27.410308,28.160239,MDH, mal_L_c + nad_c <=> h_c + nadh_c + oaa_c,Malate dehydrogenase
+MDHm,-34.240682,-30.596335,-27.595178,-26.934109,-26.273041,-25.611972,-25.577387,-26.408332,-27.239277,-28.070223,MDHm, mal_L_m + nad_m <=> h_m + nadh_m + oaa_m,Malate dehydrogenase  mitochondrial
+NADH2_u6cm,82.404833,79.578291,76.877482,75.032806,73.18813,71.343454,69.283868,66.927369,64.57087,62.214371,NADH2_u6cm, h_c + nadh_c + q6_m --> nad_c + q6h2_m,NADH dehydrogenase  cytosolicmitochondrial
+PPA,6.946852,7.60353,8.274264,8.870574,9.466885,10.063195,10.638654,11.185305,11.731957,12.278608,PPA, h2o_c + ppi_c --> h_c + 2.0 pi_c,Inorganic diphosphatase
+GND,10.255834,11.816038,13.312323,14.574837,15.837351,17.099866,16.552826,13.505765,10.458704,7.411644,GND, 6pgc_c + nadp_c --> co2_c + nadph_c + ru5p_D_c,Phosphogluconate dehydrogenase
+PGL,10.255834,11.816038,13.312323,14.574837,15.837351,17.099866,16.552826,13.505765,10.458704,7.411644,PGL, 6pgl_c + h2o_c --> 6pgc_c + h_c,6-phosphogluconolactonase
+GLUSx,0.0,0.0,0.0,0.0,0.0,0.0,2.836277,9.591063,16.345848,23.100634,GLUSx, akg_c + gln_L_c + h_c + nadh_c --> 2.0 glu_L_c + nad_c,Glutamate synthase  NADH2 
+GLYC3Ptm,8.502073,8.078144,7.63815,7.132788,6.627425,6.122063,5.587268,5.01181,4.436353,3.860895,GLYC3Ptm, glyc3p_c --> glyc3p_m,Glycerol 3 phosphate shuttle
+RPE,6.268502,7.358076,8.406149,9.302903,10.199656,11.09641,10.788832,8.81739,6.845948,4.874505,RPE, ru5p_D_c <=> xu5p_D_c,Ribulose 5-phosphate 3-epimerase
+RPI,-3.987332,-4.457962,-4.906173,-5.271934,-5.637695,-6.003456,-5.763994,-4.688375,-3.612757,-2.537138,RPI, r5p_c <=> ru5p_D_c,Ribose-5-phosphate isomerase
+TKT2,3.094522,3.642762,4.17033,4.622554,5.074779,5.527003,5.377204,4.39567,3.414135,2.432601,TKT2, e4p_c + xu5p_D_c <=> f6p_c + g3p_c,Transketolase
+HCO3E,13.334113,13.43556,13.504732,13.48645,13.468167,13.449884,13.388005,13.265895,13.143785,13.021675,HCO3E, co2_c + h2o_c <=> h_c + hco3_c,HCO3 equilibration reaction
+IPDDI,0.604084,0.866711,1.128723,1.388234,1.647746,1.907257,2.165643,2.422473,2.679303,2.936133,IPDDI, ipdp_c <=> dmpp_c,Isopentenyl-diphosphate D-isomerase
+ACS,0.0,0.0,0.025377,0.022395,0.019413,0.016431,0.013339,0.010094,0.00685,0.003605,ACS, ac_c + atp_c + coa_c --> accoa_c + amp_c + ppi_c,Acetyl-CoA synthetase
+MALtm,-48.921051,-40.496449,-33.452475,-31.155339,-28.858204,-26.561068,-25.577387,-26.408332,-27.239277,-28.070223,MALtm, mal_L_c + pi_m <=> mal_L_m + pi_c,Malate transport  mitochondrial
+DPMVD,2.102187,3.180002,4.255973,5.324443,6.392912,7.461382,8.526474,9.586899,10.647324,11.707749,DPMVD, 5dpmev_c + atp_c --> adp_c + co2_c + ipdp_c + pi_c,Diphosphomevalonate decarboxylase
+PMEVK,2.102187,3.180002,4.255973,5.324443,6.392912,7.461382,8.526474,9.586899,10.647324,11.707749,PMEVK, 5pmev_c + atp_c --> 5dpmev_c + adp_c,Phosphomevalonate kinase
+OAAt2m,44.594073,38.927943,33.533113,31.226502,28.919892,26.613281,25.619774,26.440409,27.261044,28.081679,OAAt2m, h_c + oaa_c <=> h_m + oaa_m,Oxaloacetate transport  mitochondrial
+3C3HMPtm,-5.059779,-5.880496,-6.685126,-7.468164,-8.251202,-9.03424,-9.803337,-10.553174,-11.30301,-12.052847,3C3HMPtm, 3c3hmp_c <=> 3c3hmp_m,2 Isopropylmalate transport  diffusion  mitochondrial
+PRO1xm,0.0,0.0,0.45357,2.916651,5.379732,7.842814,9.606611,10.4043,11.201989,11.999678,PRO1xm, nad_m + pro_L_m --> 1pyr5c_m + 2.0 h_m + nadh_m,Proline oxidase  NAD   mitochondrial
+PROtm,0.0,0.0,0.45357,2.916651,5.379732,7.842814,9.606611,10.4043,11.201989,11.999678,PROtm, pro_L_c <=> pro_L_m,L proline transport  mitochondrial
+PYRt2m,25.9683,26.370806,26.880109,27.479481,28.078852,28.678223,29.918535,32.04435,34.170165,36.29598,PYRt2m, h_c + pyr_c <=> h_m + pyr_m,Pyruvate mitochondrial transport via proton symport
+PYR5CDm,0.0,0.0,0.45357,2.916651,5.379732,7.842814,9.606611,10.4043,11.201989,11.999678,PYR5CDm, glu5sa_m + h2o_m + nadp_m --> glu_L_m + 2.0 h_m + nadph_m,D1 pyrroline 5 carboxylate dehydrogenase  mitochondrial
+TALA,3.173981,3.715314,4.235819,4.680348,5.124878,5.569407,5.411628,4.42172,3.431812,2.441904,TALA, g3p_c + s7p_c <=> e4p_c + f6p_c,Transaldolase
+ACLSm,5.174955,5.985661,6.780053,7.551937,8.323821,9.095705,9.853235,10.590934,11.328633,12.066333,ACLSm, h_m + 2.0 pyr_m --> alac_S_m + co2_m,Acetolactate synthase  mitochondrial
+DHAD1m,5.174955,5.985661,6.780053,7.551937,8.323821,9.095705,9.853235,10.590934,11.328633,12.066333,DHAD1m, 23dhmb_m --> 3mob_m + h2o_m,Dihydroxy acid dehydratase  2 3 dihydroxy 3 methylbutanoate   mitochondrial
+TKT1,3.173981,3.715314,4.235819,4.680348,5.124878,5.569407,5.411628,4.42172,3.431812,2.441904,TKT1, r5p_c + xu5p_D_c <=> g3p_c + s7p_c,Transketolase
+IPMD,5.059779,5.880496,6.685126,7.468164,8.251202,9.03424,9.803337,10.553174,11.30301,12.052847,IPMD, 3c2hmp_c + nad_c --> 3c4mop_c + h_c + nadh_c,3-isopropylmalate dehydrogenase
+IPPMIa,-5.059779,-5.880496,-6.685126,-7.468164,-8.251202,-9.03424,-9.803337,-10.553174,-11.30301,-12.052847,IPPMIa, 3c2hmp_c <=> 2ippm_c + h2o_c,3-isopropylmalate dehydratase
+IPPMIb,-5.059779,-5.880496,-6.685126,-7.468164,-8.251202,-9.03424,-9.803337,-10.553174,-11.30301,-12.052847,IPPMIb, 2ippm_c + h2o_c <=> 3c3hmp_c,2-isopropylmalate hydratase
+IPPSm,5.059779,5.880496,6.685126,7.468164,8.251202,9.03424,9.803337,10.553174,11.30301,12.052847,IPPSm, 3mob_m + accoa_m + h2o_m --> 3c3hmp_m + coa_m + h_m,2 isopropylmalate synthase  mitochondrial
+KARA1im,5.174955,5.985661,6.780053,7.551937,8.323821,9.095705,9.853235,10.590934,11.328633,12.066333,KARA1im, alac_S_m + h_m + nadph_m --> 23dhmb_m + nadp_m,Acetohydroxy acid isomeroreductase  mitochondrial
+OMCDC,5.059779,5.880496,6.685126,7.468164,8.251202,9.03424,9.803337,10.553174,11.30301,12.052847,OMCDC, 3c4mop_c + h_c --> 4mop_c + co2_c,2-Oxo-4-methyl-3-carboxypentanoate decarboxylation
+LEUDH,4.932549,5.764326,6.580264,7.375624,8.170984,8.966343,9.748218,10.511462,11.274706,12.03795,LEUDH, 4mop_c + coa_c + nad_c --> co2_c + ivcoa_c + nadh_c,
+MBCOAi,4.932549,5.764326,6.580264,7.375624,8.170984,8.966343,9.748218,10.511462,11.274706,12.03795,MBCOAi, ivcoa_c + nad_c --> 3mb2coa_c + h_c + nadh_c,
+MCCC,4.932549,5.764326,6.580264,7.375624,8.170984,8.966343,9.748218,10.511462,11.274706,12.03795,MCCC, 3mb2coa_c + atp_c + hco3_c --> 3mgcoa_c + adp_c + h_c + pi_c,
+MGCH,4.932549,5.764326,6.580264,7.375624,8.170984,8.966343,9.748218,10.511462,11.274706,12.03795,MGCH, 3mgcoa_c + h2o_c --> hmgcoa_c,
+DMATTmodi,0.604084,0.866711,1.128723,1.388234,1.647746,1.907257,2.165643,2.422473,2.679303,2.936133,DMATTmodi,,
+GRTTmodi,0.604084,0.866711,1.128723,1.388234,1.647746,1.907257,2.165643,2.422473,2.679303,2.936133,GRTTmodi,,
+GGS1_r0373,0.289935,0.57987,0.869805,1.15974,1.449675,1.73961,2.029545,2.31948,2.609415,2.89935,GGS1_r0373,,
+HMGCOAR1,2.102187,3.180002,4.255973,5.324443,6.392912,7.461382,8.526474,9.586899,10.647324,11.707749,HMGCOAR1,,
+MEVK4-1,2.102187,3.180002,4.255973,5.324443,6.392912,7.461382,8.526474,9.586899,10.647324,11.707749,MEVK4-1,,
+PHYT,0.1449675,0.289935,0.4349025,0.57987,0.7248375,0.869805,1.0147725,1.15974,1.3047075,1.449675,PHYT,,
