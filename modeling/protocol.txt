@@ -8,5 +8,5 @@ Example - YALI0B01298p
 3) download structure file as pdb format
     in this case - homodimer, QMEANDisCo Global 0.77
     template 4qgk.1.A(FALDH) sequence identity 41.10%
-4) open pymol and load YALI0B01298p model file
+4) open pymol and load YALI0B01298p model files
 5) 
